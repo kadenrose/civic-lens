@@ -229,17 +229,21 @@ form{
   padding: 1rem;
   box-shadow: var(--shadow);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: 
-  ""
-  ""
-  "";
+  "nameLabel . phoneLabel ."
+  "nameInput nameInput phoneInput phoneInput"
+  "fieldset fieldset fieldset fieldset"
+  "submit submit submit submit";
+  gap: 1rem;
 }
 
 fieldset{
   border: 1px solid var(--blue-bulletin);
   padding: 1rem;
   grid-area: fieldset;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
 }
 
 #phoneLabel{
@@ -256,6 +260,13 @@ fieldset{
 
 #phone{
   grid-area: phoneInput;
+}
+
+#my-submit{
+  grid-area: submit;
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  box-shadow: var(--shadow);
 }
 
 /* ///ADD/// Global Layout Styles */
