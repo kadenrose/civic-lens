@@ -110,7 +110,7 @@ header, footer{
   background-color: var(--blue-bulletin);
   padding: 10px;
   margin: 0;
-  height: 200px;
+  height: 250px;
   color: var(--watchdog-white);
 }
 
@@ -122,7 +122,9 @@ header{
 nav ul{
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
+
 /* ///ADD/// Skip Link Styles */
 
 /* ///ADD/// Navigation Styles */
@@ -133,9 +135,14 @@ nav a, footer a{
   padding: 1rem 2rem;
 }
 
+nav li, footer li{
+  margin: 1rem;
+}
+
 footer ul{
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 main{
@@ -161,6 +168,11 @@ main{
 #breakingNewsContainer{
   display: grid;
   grid-template-columns: 1fr;
+}
+
+#breakingNewsContainer p{
+  border-top: 1px solid var(--watchdog-white);
+  padding-top: 1rem;
 }
 
 #articles{
@@ -205,6 +217,14 @@ video{
   border: 1px solid var(--blue-bulletin);
   padding: 1rem;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#featuredArticlesContainer p{
+  border-top: 1px solid var(--blue-bulletin);
+  padding-top: 1rem;
 }
 
 #p51{
@@ -243,7 +263,7 @@ fieldset{
   padding: 1rem;
   grid-area: fieldset;
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+  grid-template-columns: 0.25fr 1fr 0.25fr 1fr 0.25fr 1fr;
 }
 
 #phoneLabel{
@@ -269,18 +289,70 @@ fieldset{
   box-shadow: var(--shadow);
 }
 
-/* ///ADD/// Global Layout Styles */
+input{
+  background-color: var(--watchdog-white);
+}
 
-/* ///ADD/// Global Text Styles */
+#formContainer p{
+  padding-top: 1rem;
+}
 
+@media screen and (max-width: 1280px){
+  #p51{
+    grid-template-columns: 1fr 1fr;
+  }
 
-/* ///ADD/// medium styles 620px */
+  fieldset{
+    grid-template-columns: 0.25fr 1fr 0.25fr 1fr;
+  }
 
+  main{
+    max-width: 650px;
+  }
 
-/* ///ADD/// large styles 920px */
+  footer, header{
+    max-width: 650px;
+  }
+}
 
+@media screen and (max-width: 770px){
+  #p51{
+    grid-template-columns: 1fr;
+  }
 
-/* ///ADD/// x-large styles 1024px */
+  fieldset{
+    grid-template-columns: 0.25fr 1fr;
+  }
+
+  main{
+    max-width: 400px;
+  }
+  
+  footer, header{
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+  }
+}
+
+h1{
+  font-size: 2.2rem;
+  font-weight: 100;
+}
+
+.tagline{
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 1.2rem;
+}
+
+h3{
+  font-size: 1.1rem;
+}
 
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
@@ -288,5 +360,5 @@ fieldset{
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+  
 }
